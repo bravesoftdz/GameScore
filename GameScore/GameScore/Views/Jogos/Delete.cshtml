@@ -1,0 +1,40 @@
+﻿@model GameScore.Models.Jogo
+
+@{
+    ViewBag.Title = "Delete";
+}
+<h3>Tem certeza que deseja Excluir o Registro?</h3>
+<div class="container" align="center">
+    <div>
+        <h4>Jogo</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.DataJogo)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DataJogo)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.PontuacaoJogo)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PontuacaoJogo)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Deletar" class="btn btn-danger" /> 
+                <button onclick="location.href='@Url.Action( "Index")';return false;" class="btn btn-primary">Voltar</button>
+            </div>
+        }
+    </div>
+</div>
